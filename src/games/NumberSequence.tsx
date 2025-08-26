@@ -7,7 +7,7 @@ interface NumberSequenceProps {
   progress?: any;
 }
 
-const NumberSequence: React.FC<NumberSequenceProps> = ({ onComplete, onUpdate, initialState }) => {
+const NumberSequence: React.FC<NumberSequenceProps> = ({ onComplete, onUpdate }) => {
   const [gameStarted, setGameStarted] = useState(false);
   const [sequence, setSequence] = useState<number[]>([]);
   const [playerSequence, setPlayerSequence] = useState<number[]>([]);

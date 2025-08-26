@@ -11,14 +11,14 @@ interface PixelGrid {
   [key: string]: string // "x-y": color
 }
 
-const PixelArtCreator: React.FC<PixelArtCreatorProps> = ({ onComplete, onUpdate, initialState, progress }) => {
+const PixelArtCreator: React.FC<PixelArtCreatorProps> = ({ onUpdate, initialState, progress }) => {
   const [grid, setGrid] = useState<PixelGrid>(initialState?.grid || {})
   const [selectedColor, setSelectedColor] = useState('#FF0000')
   const [gridSize, setGridSize] = useState(initialState?.gridSize || 16)
   const [isDrawing, setIsDrawing] = useState(false)
   const [drawingMode, setDrawingMode] = useState<'draw' | 'erase'>('draw')
   const [savedArtworks, setSavedArtworks] = useState<any[]>(initialState?.savedArtworks || [])
-  const [currentArtwork, setCurrentArtwork] = useState<PixelGrid>({})
+  const [, setCurrentArtwork] = useState<PixelGrid>({})
 
   const canvasRef = useRef<HTMLDivElement>(null)
 

@@ -200,7 +200,7 @@ const WordChain: React.FC<WordChainProps> = ({ onComplete, onUpdate, initialStat
     return basePoints + chainBonus + streakBonus + timeBonus
   }
 
-  const getResultMessage = (points: number, streak: number): string => {
+  const getResultMessage = (_points: number, streak: number): string => {
     if (streak >= 10) return "🔥 LEGENDARY CHAIN! 🔥"
     if (streak >= 7) return "⚡ INCREDIBLE STREAK! ⚡"
     if (streak >= 5) return "⭐ AMAZING WORK! ⭐"
@@ -217,7 +217,7 @@ const WordChain: React.FC<WordChainProps> = ({ onComplete, onUpdate, initialStat
     )
     
     if (possibleWords.length > 0) {
-      const hint = possibleWords[Math.floor(Math.random() * possibleWords.length)]
+      // const _hint = possibleWords[Math.floor(Math.random() * possibleWords.length)]
       setShowHint(true)
       setTimeout(() => setShowHint(false), 5000)
       

@@ -7,7 +7,7 @@ interface SpotTheDifferenceProps {
   progress?: any;
 }
 
-const SpotTheDifference: React.FC<SpotTheDifferenceProps> = ({ onComplete, onUpdate, initialState }) => {
+const SpotTheDifference: React.FC<SpotTheDifferenceProps> = ({ onComplete, onUpdate }) => {
   const [gameStarted, setGameStarted] = useState(false);
   const [grid1, setGrid1] = useState<boolean[][]>([]);
   const [grid2, setGrid2] = useState<boolean[][]>([]);

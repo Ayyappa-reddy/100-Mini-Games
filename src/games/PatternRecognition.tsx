@@ -22,7 +22,7 @@ interface GameRound {
   timeLimit: number
 }
 
-const PatternRecognition: React.FC<PatternRecognitionProps> = ({ onComplete, onUpdate, initialState, progress }) => {
+const PatternRecognition: React.FC<PatternRecognitionProps> = ({ onComplete, progress }) => {
   const [currentRound, setCurrentRound] = useState<GameRound | null>(null)
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [roundNumber, setRoundNumber] = useState(1)

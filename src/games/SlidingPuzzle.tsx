@@ -107,7 +107,7 @@ const SlidingPuzzle: React.FC<SlidingPuzzleProps> = ({ onComplete, onUpdate, ini
 
     // Perform random valid moves
     for (let i = 0; i < shuffleIntensity; i++) {
-      const validMoves = getValidMoves(emptyIndex, shuffled)
+      const validMoves = getValidMoves(emptyIndex)
       if (validMoves.length > 0) {
         const randomMove = validMoves[Math.floor(Math.random() * validMoves.length)]
         const result = moveTile(randomMove, shuffled)
@@ -128,7 +128,7 @@ const SlidingPuzzle: React.FC<SlidingPuzzleProps> = ({ onComplete, onUpdate, ini
     return shuffled
   }
 
-  const getValidMoves = (emptyIndex: number, tilesArray: Tile[]): number[] => {
+  const getValidMoves = (emptyIndex: number): number[] => {
     const validMoves: number[] = []
     const row = Math.floor(emptyIndex / gridSize)
     const col = emptyIndex % gridSize
@@ -158,7 +158,7 @@ const SlidingPuzzle: React.FC<SlidingPuzzleProps> = ({ onComplete, onUpdate, ini
     if (emptyIndex === -1) return null
 
     // Check if move is valid
-    const validMoves = getValidMoves(emptyIndex, currentTiles)
+    const validMoves = getValidMoves(emptyIndex)
     if (!validMoves.includes(tileIndex)) {
       console.log(`Invalid move: tile ${tileIndex} cannot move to empty space at ${emptyIndex}`)
       return null
@@ -251,7 +251,7 @@ const SlidingPuzzle: React.FC<SlidingPuzzleProps> = ({ onComplete, onUpdate, ini
   const getHint = () => {
     // Find a tile that can be moved
     const emptyIndex = tiles.findIndex(tile => tile.id === 0)
-    const validMoves = getValidMoves(emptyIndex, tiles)
+    const validMoves = getValidMoves(emptyIndex)
 
     if (validMoves.length > 0) {
       // Just move the first valid tile as a hint

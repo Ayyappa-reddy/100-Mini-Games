@@ -12,7 +12,7 @@ interface Tube {
   colors: string[]
 }
 
-const WaterSort: React.FC<WaterSortProps> = ({ onComplete, onUpdate, initialState, progress }) => {
+const WaterSort: React.FC<WaterSortProps> = ({ onComplete, onUpdate, progress }) => {
   const [tubes, setTubes] = useState<Tube[]>([])
   const [selectedTube, setSelectedTube] = useState<number | null>(null)
   const [moves, setMoves] = useState(0)
@@ -20,7 +20,7 @@ const WaterSort: React.FC<WaterSortProps> = ({ onComplete, onUpdate, initialStat
   const [startTime] = useState(Date.now())
   const [timeSpent, setTimeSpent] = useState(0)
 
-  const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00'] // Red, Green, Blue, Yellow
+  // const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00'] // Red, Green, Blue, Yellow
 
   // Initialize game
   useEffect(() => {

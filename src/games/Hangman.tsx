@@ -25,7 +25,7 @@ const uniqueLetters = (w: string) => new Set(w.replace(/[^A-Z]/g, '').split(''))
 const Hangman: React.FC<HangmanProps> = ({ onComplete, onUpdate, initialState }) => {
   const [secret, setSecret] = useState<string>(initialState?.secret || pickWord())
   const [guessed, setGuessed] = useState<Set<string>>(new Set<string>(initialState?.guessed || []))
-  const [lives] = useState<number>(initialState?.lives ?? MAX_LIVES)
+  // const [lives] = useState<number>(initialState?.lives ?? MAX_LIVES)
   const [hints, setHints] = useState<number>(initialState?.hints ?? 2)
   const [elapsed, setElapsed] = useState<number>(initialState?.elapsed || 0)
   const [gameOver, setGameOver] = useState<boolean>(false)
