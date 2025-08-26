@@ -65,7 +65,7 @@ const computeAdjacency = (board: Cell[][]) => {
   }
 }
 
-const Minesweeper: React.FC<MinesweeperProps> = ({ onComplete, onUpdate, initialState, progress }) => {
+const Minesweeper: React.FC<MinesweeperProps> = ({ onComplete, onUpdate, initialState }) => {
   const [board, setBoard] = useState<Cell[][]>(() => initialState?.board || createEmptyBoard())
   const [revealedSafe, setRevealedSafe] = useState<number>(initialState?.revealedSafe || 0)
   const [flags, setFlags] = useState<number>(initialState?.flags || 0)

@@ -193,7 +193,7 @@ const NumberConnect: React.FC<{
   }, [])
 
   // Handle mouse/touch events
-  const handleMouseDown = useCallback((e: React.MouseEvent, row: number, col: number) => {
+  const handleMouseDown = useCallback((_e: React.MouseEvent, row: number, col: number) => {
     if (!gameState.board[row][col]) return
     
     setIsDragging(true)
@@ -201,7 +201,7 @@ const NumberConnect: React.FC<{
     setDragChain([gameState.board[row][col]!])
   }, [gameState.board])
 
-  const handleMouseEnter = useCallback((e: React.MouseEvent, row: number, col: number) => {
+  const handleMouseEnter = useCallback((_e: React.MouseEvent, row: number, col: number) => {
     if (!isDragging || !dragStart || !gameState.board[row][col]) return
     
     // Check if this tile can be added to the chain (must be same value as first tile)

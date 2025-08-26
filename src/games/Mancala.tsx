@@ -40,8 +40,8 @@ const Mancala: React.FC<{
 
   const [gameMode, setGameMode] = useState<'twoPlayer' | 'vsAI'>('twoPlayer')
   const [aiThinking, setAiThinking] = useState(false)
-  const [animating, setAnimating] = useState(false)
-  const animationRef = useRef<NodeJS.Timeout>()
+  // const [animating, setAnimating] = useState(false)
+  // const animationRef = useRef<NodeJS.Timeout>()
 
   // Initialize board with 6 pits per player + 2 stores
   const initializeBoard = useCallback((): Pit[] => {
@@ -166,7 +166,7 @@ const Mancala: React.FC<{
 
   // Execute a move
   const executeMove = useCallback(async (fromPitId: number) => {
-    if (animating || !isPlayerPit(fromPitId)) return
+    if (!isPlayerPit(fromPitId)) return
     
     const newPits = gameState.pits.map(pit => ({ ...pit }))
     const fromPit = newPits.find(pit => pit.id === fromPitId)!
@@ -245,7 +245,7 @@ const Mancala: React.FC<{
     }
     
     onUpdate({ pits: newPits, currentPlayer: newCurrentPlayer }, 0)
-  }, [animating, isPlayerPit, gameState.pits, gameState.currentPlayer, getNextPit, checkGameOver, endGame, gameMode, onUpdate])
+  }, [isPlayerPit, gameState.pits, gameState.currentPlayer, getNextPit, checkGameOver, endGame, gameMode, onUpdate])
 
   // Simple AI move
   const makeAIMove = useCallback((pits: Pit[]) => {

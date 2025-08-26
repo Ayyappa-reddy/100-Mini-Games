@@ -171,7 +171,7 @@ const Nonogram: React.FC<NonogramProps> = ({ onComplete, onUpdate, initialState 
     setHints(h => h - 1)
   }
 
-  const maxRowClueLen = Math.max(...rowClues.map(rc => rc.length))
+  // const maxRowClueLen = Math.max(...rowClues.map(rc => rc.length))
   const maxColClueLen = Math.max(...colClues.map(cc => cc.length))
 
   // clue completion helpers
