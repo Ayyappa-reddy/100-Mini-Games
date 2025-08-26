@@ -19,7 +19,7 @@ interface Pipe {
   passed: boolean
 }
 
-const FlappyBird: React.FC<FlappyBirdProps> = ({ onComplete, onUpdate, initialState, progress }) => {
+const FlappyBird: React.FC<FlappyBirdProps> = ({ onComplete, initialState, progress }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const gameLoopRef = useRef<number>()
   const lastTimeRef = useRef<number>(0)
@@ -82,21 +82,21 @@ const FlappyBird: React.FC<FlappyBirdProps> = ({ onComplete, onUpdate, initialSt
   }, [handleClick])
 
   // Spawn new pipes
-  const spawnPipe = useCallback(() => {
-    const minTopHeight = 50
-    const maxTopHeight = CANVAS_HEIGHT - pipeGap - 100
-    const topHeight = Math.random() * (maxTopHeight - minTopHeight) + minTopHeight
-    const bottomY = topHeight + pipeGap
+  // const spawnPipe = useCallback(() => {
+  //   const minTopHeight = 50
+  //   const maxTopHeight = CANVAS_HEIGHT - pipeGap - 100
+  //   const topHeight = Math.random() * (maxTopHeight - minTopHeight) + minTopHeight
+  //   const bottomY = topHeight + pipeGap
 
-    const newPipe: Pipe = {
-      x: CANVAS_WIDTH,
-      topHeight,
-      bottomY,
-      passed: false
-    }
+  //   const newPipe: Pipe = {
+  //     x: CANVAS_WIDTH,
+  //     topHeight,
+  //     bottomY,
+  //     passed: false
+  //   }
 
-    setPipes(prev => [...prev, newPipe])
-  }, [pipeGap])
+  //   setPipes(prev => [...prev, newPipe])
+  // }, [pipeGap])
 
   // Check collision
   const checkCollision = useCallback((bird: Bird, pipes: Pipe[]): boolean => {
@@ -129,7 +129,7 @@ const FlappyBird: React.FC<FlappyBirdProps> = ({ onComplete, onUpdate, initialSt
   const gameLoop = useCallback((currentTime: number) => {
     if (gameState !== 'playing') return
 
-    const deltaTime = currentTime - lastTimeRef.current
+    // const deltaTime = currentTime - lastTimeRef.current
     lastTimeRef.current = currentTime
 
     // Update bird physics

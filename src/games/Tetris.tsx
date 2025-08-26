@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { RotateCcw, RotateCw, Pause, Play, RotateCcw as RotateCcwIcon } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { RotateCw, Pause, Play } from 'lucide-react';
 
 interface Tetromino {
   shape: number[][];
@@ -75,7 +75,7 @@ interface TetrisProps {
   progress: any;
 }
 
-const Tetris: React.FC<TetrisProps> = ({ onComplete, onUpdate, initialState, progress }) => {
+const Tetris: React.FC<TetrisProps> = ({ onComplete, onUpdate }) => {
   const [board, setBoard] = useState<number[][]>([]);
   const [currentPiece, setCurrentPiece] = useState<{ shape: number[][]; x: number; y: number; type: string } | null>(null);
   const [nextPieces, setNextPieces] = useState<string[]>([]);
@@ -306,7 +306,7 @@ const Tetris: React.FC<TetrisProps> = ({ onComplete, onUpdate, initialState, pro
     if (linesCleared > 0) {
       setLines(prev => prev + linesCleared);
       setScore(prev => prev + linesCleared * 100 * level);
-      setLevel(prev => Math.floor((lines + linesCleared) / 10) + 1);
+      setLevel(Math.floor((lines + linesCleared) / 10) + 1);
     }
     
     setBoard(newBoard);
@@ -576,7 +576,7 @@ const Tetris: React.FC<TetrisProps> = ({ onComplete, onUpdate, initialState, pro
               onClick={() => rotatePiece(false)}
               className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors flex items-center gap-2"
             >
-              <RotateCcwIcon className="w-4 h-4" />
+              <RotateCw className="w-4 h-4" />
               Z
             </button>
             <button

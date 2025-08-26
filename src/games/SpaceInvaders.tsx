@@ -46,7 +46,7 @@ interface GameState {
   powerUp: 'rapidFire' | 'tripleShot' | null
 }
 
-const SpaceInvaders: React.FC<SpaceInvadersProps> = ({ onComplete, onUpdate, initialState, progress }) => {
+const SpaceInvaders: React.FC<SpaceInvadersProps> = ({ initialState, progress }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const gameLoopRef = useRef<number>()
   const keysRef = useRef<Set<string>>(new Set())
