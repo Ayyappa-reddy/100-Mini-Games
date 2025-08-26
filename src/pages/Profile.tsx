@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { supabase } from '../lib/supabase'
-import { User, Mail, CheckCircle, XCircle, Edit3, Save, X, Lock, Eye, EyeOff } from 'lucide-react'
+import { Mail, CheckCircle, XCircle, Edit3, Save, X, Eye, EyeOff } from 'lucide-react'
 
 const Profile: React.FC = () => {
   const { user, emailVerified, updateProfile, resendVerification, changePassword } = useAuth()

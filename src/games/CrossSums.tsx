@@ -147,9 +147,9 @@ const CrossSums: React.FC<{
     })
   }
 
-  function changeMode(newMode: 'erase' | 'confirm') {
-    setGameState(prev => ({ ...prev, mode: newMode }))
-  }
+  // function changeMode(newMode: 'erase' | 'confirm') {
+  //   setGameState(prev => ({ ...prev, mode: newMode }))
+  // }
 
   function nextLevel() {
     const currentDifficulty = gameState.selectedDifficulty || 'easy'

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 interface HandCricketProps {
   onComplete: (score: number, completed: boolean) => void

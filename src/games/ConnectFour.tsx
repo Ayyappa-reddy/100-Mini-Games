@@ -7,7 +7,7 @@ interface ConnectFourProps {
   progress?: any
 }
 
-const ConnectFour: React.FC<ConnectFourProps> = ({ onComplete, onUpdate, initialState, progress }) => {
+const ConnectFour: React.FC<ConnectFourProps> = ({ onComplete, onUpdate, initialState }) => {
   const [board, setBoard] = useState<(number | null)[][]>(() => 
     Array(6).fill(null).map(() => Array(7).fill(null))
   )

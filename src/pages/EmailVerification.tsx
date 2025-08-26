@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
-import { CheckCircle, XCircle, Clock, AlertCircle } from 'lucide-react'
+import { CheckCircle, XCircle, Clock } from 'lucide-react'
 
 const EmailVerification: React.FC = () => {
   const [searchParams] = useSearchParams()

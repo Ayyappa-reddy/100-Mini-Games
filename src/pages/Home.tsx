@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
-import { Gamepad2, Trophy, Users, Star, ArrowRight, Play, Zap, Target, Heart, Sparkles, ChevronDown, MousePointer, Clock, Award, User } from 'lucide-react'
+import { Gamepad2, Trophy, Users, Star, ArrowRight, Play, Zap, Target, Heart, Sparkles, ChevronDown, Clock, User } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 const Home = () => {

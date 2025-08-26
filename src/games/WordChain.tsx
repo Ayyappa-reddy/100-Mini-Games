@@ -167,7 +167,7 @@ const WordChain: React.FC<WordChainProps> = ({ onComplete, onUpdate, initialStat
       streak: newStreak,
       totalScore: newTotalScore,
       timeRemaining: gameState.timeRemaining,
-      gameMode: gameState.gameMode,
+      gameMode: gameState.gameMode as 'classic' | 'speed' | 'challenge',
       powerUps: gameState.powerUps,
       hintsUsed: gameState.hintsUsed,
       gameComplete: false,
@@ -245,7 +245,7 @@ const WordChain: React.FC<WordChainProps> = ({ onComplete, onUpdate, initialStat
 
   const resetGame = () => {
     clearInterval(timerRef.current!)
-    const newState = {
+    const newState: GameState = {
       currentWord: 'START',
       chainLength: 1,
       timeRemaining: 30,

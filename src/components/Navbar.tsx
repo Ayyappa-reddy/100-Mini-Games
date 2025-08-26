@@ -43,20 +43,24 @@ const Navbar = () => {
                 {/* Email Verification Status */}
                 <div className="flex items-center space-x-1">
                   {emailVerified ? (
-                    <CheckCircle className="h-4 w-4 text-green-500" title="Email Verified" />
+                    <CheckCircle className="h-4 w-4 text-green-500" />
                   ) : (
-                    <XCircle className="h-4 w-4 text-red-500" title="Email Not Verified" />
+                    <XCircle className="h-4 w-4 text-red-500" />
                   )}
                   <Mail className="h-4 w-4 text-gray-400" />
                 </div>
                 
-                <button
-                  onClick={handleSignOut}
-                  className="flex items-center space-x-1 text-gray-700 hover:text-red-600 transition-colors"
-                >
-                  <LogOut className="h-5 w-5" />
-                  <span>Sign Out</span>
-                </button>
+                <div className="flex items-center space-x-4">
+                  <Link to="/profile" className="text-white hover:text-primary-200 transition-colors">
+                    <User className="h-6 w-6" />
+                  </Link>
+                  <button
+                    onClick={handleSignOut}
+                    className="text-white hover:text-primary-200 transition-colors"
+                  >
+                    <LogOut className="h-6 w-6" />
+                  </button>
+                </div>
               </>
             ) : (
               <>

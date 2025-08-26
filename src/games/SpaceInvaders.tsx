@@ -316,13 +316,13 @@ const SpaceInvaders: React.FC<SpaceInvadersProps> = ({ onComplete, onUpdate, ini
         const leftMost = Math.min(...aliveAliens.map(a => a.x))
         const rightMost = Math.max(...aliveAliens.map(a => a.x + ALIEN_WIDTH))
 
-        let newDirection = newState.alienDirection
+        let newDirection: 1 | -1 = newState.alienDirection
         let newDropDistance = newState.alienDropDistance
 
         // Check if aliens hit the edge
         if ((newDirection === 1 && rightMost >= CANVAS_WIDTH - 20) ||
             (newDirection === -1 && leftMost <= 20)) {
-          newDirection = -newDirection
+          newDirection = (newDirection === 1 ? -1 : 1) as 1 | -1
           newDropDistance += 20
         }
 
@@ -337,7 +337,7 @@ const SpaceInvaders: React.FC<SpaceInvadersProps> = ({ onComplete, onUpdate, ini
           }
         })
 
-        newState.alienDirection = newDirection as 1 | -1
+        newState.alienDirection = newDirection === 1 ? 1 : -1
         newState.alienDropDistance = 0
 
         // Debug: Log alien positions occasionally

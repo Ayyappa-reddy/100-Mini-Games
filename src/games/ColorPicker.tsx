@@ -7,7 +7,7 @@ interface ColorPickerProps {
   progress?: any;
 }
 
-const ColorPicker: React.FC<ColorPickerProps> = ({ onComplete, onUpdate, initialState }) => {
+const ColorPicker: React.FC<ColorPickerProps> = ({ onComplete, onUpdate }) => {
   const [gameStarted, setGameStarted] = useState(false);
   const [targetColor, setTargetColor] = useState({ r: 0, g: 0, b: 0 });
   const [playerColor, setPlayerColor] = useState({ r: 128, g: 128, b: 128 });
