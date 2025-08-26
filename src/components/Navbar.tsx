@@ -56,7 +56,7 @@ const Navbar = () => {
                   </Link>
                   <button
                     onClick={handleSignOut}
-                    className="text-white hover:text-primary-200 transition-colors"
+                    className="text-gray-700 hover:text-primary-600 transition-colors"
                   >
                     <LogOut className="h-6 w-6" />
                   </button>
